@@ -103,8 +103,8 @@
         android:layout_height="545dp"
         android:adjustViewBounds="true"
         app:srcCompat="@drawable/banner"
-        tools:layout_editor_absoluteX="-69dp"
-        tools:layout_editor_absoluteY="-16dp" />
+        tools:layout_editor_absoluteX="-74dp"
+        tools:layout_editor_absoluteY="-14dp" />
 
     <ImageView
         android:id="@+id/imageView11"
