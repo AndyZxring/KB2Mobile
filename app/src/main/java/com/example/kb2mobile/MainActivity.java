@@ -7,6 +7,7 @@ import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
@@ -14,6 +15,7 @@ import androidx.core.view.WindowInsetsCompat;
 public class MainActivity extends AppCompatActivity {
 
     TextView pendaftaranBtn, newsBtn, aboutBtn,contactBtn;
+    AppCompatButton daftarBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,14 +31,30 @@ public class MainActivity extends AppCompatActivity {
         newsBtn = (TextView) findViewById(R.id.newsBtn);
         aboutBtn = (TextView) findViewById(R.id.aboutBtn);
         contactBtn = (TextView) findViewById(R.id.contactBtn);
+        daftarBtn = (AppCompatButton) findViewById(R.id.daftarBtn);
 
 
 
+        daftarBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent daftarBaru = new Intent(getApplicationContext(), DaftarbActivity.class);
+                startActivity(daftarBaru);
+            }
+        });
         pendaftaranBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent pendaftaran = new Intent(getApplicationContext(), PendaftaranActivity.class);
                 startActivity(pendaftaran);
+            }
+
+        });
+        newsBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent berita = new Intent(getApplicationContext(),NewsActivity.class);
+                startActivity(berita);
             }
         });
     }
