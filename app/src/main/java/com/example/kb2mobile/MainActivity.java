@@ -13,10 +13,8 @@ import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
-
     TextView pendaftaranBtn, newsBtn, aboutBtn,contactBtn;
-    AppCompatButton daftarBtn;
-
+    AppCompatButton daftarBtn, hubungiBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,14 +30,51 @@ public class MainActivity extends AppCompatActivity {
         aboutBtn = (TextView) findViewById(R.id.aboutBtn);
         contactBtn = (TextView) findViewById(R.id.contactBtn);
         daftarBtn = (AppCompatButton) findViewById(R.id.daftarBtn);
+        hubungiBtn = (AppCompatButton) findViewById(R.id.hubungiBtn);
 
 
+        contactBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent contact = new Intent(getApplicationContext(), ContactActivity.class);
+                startActivity(contact);
+            }
+        });
+        hubungiBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent hubungi1 = new Intent(getApplicationContext(), ContactActivity.class);
+                startActivity(hubungi1);
+            }
+        });
 
+
+        aboutBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent about = new Intent(getApplicationContext(), AboutusActivity.class);
+                startActivity(about);
+            }
+        });
         daftarBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent daftarBaru = new Intent(getApplicationContext(), DaftarbActivity.class);
-                startActivity(daftarBaru);
+                Intent daftar = new Intent(getApplicationContext(),DaftarbActivity.class);
+                startActivity(daftar);
+            }
+        });
+        aboutBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent about = new Intent(getApplicationContext(),AboutusActivity.class);
+                startActivity(about);
+            }
+        });
+        newsBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent news = new Intent(getApplicationContext(),NewsActivity.class);
+                startActivity(news);
             }
         });
         pendaftaranBtn.setOnClickListener(new View.OnClickListener() {
@@ -48,16 +83,6 @@ public class MainActivity extends AppCompatActivity {
                 Intent pendaftaran = new Intent(getApplicationContext(), PendaftaranActivity.class);
                 startActivity(pendaftaran);
             }
-
-        });
-        newsBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent berita = new Intent(getApplicationContext(),NewsActivity.class);
-                startActivity(berita);
-            }
         });
     }
-
-
 }
