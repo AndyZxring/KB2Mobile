@@ -1,7 +1,6 @@
 plugins {
     alias(libs.plugins.androidApplication)
 }
-
 android {
     namespace = "com.example.kb2mobile"
     compileSdk = 34
@@ -29,8 +28,11 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+    buildFeatures
+    viewBinding {
+        enable = true
+    }
 }
-
 dependencies {
 
     implementation(libs.appcompat)

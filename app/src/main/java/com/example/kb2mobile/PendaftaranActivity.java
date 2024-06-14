@@ -1,10 +1,8 @@
 package com.example.kb2mobile;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,29 +11,27 @@ import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
-public class AboutusActivity extends AppCompatActivity {
+public class PendaftaranActivity extends AppCompatActivity {
 
-
-
-
+    AppCompatButton saveBtn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         EdgeToEdge.enable(this);
-        setContentView(R.layout.activity_aboutus);
+        setContentView(R.layout.activity_pendaftaran);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom);
             return insets;
-
         });
+        saveBtn = (AppCompatButton) findViewById(R.id.saveBtn);
 
-
-    }
-
-
-    public void backBtn(View view) {
-        Intent balik1 = new Intent(getApplicationContext(), MainActivity.class);
-        startActivity(balik1);
+        saveBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent save = new Intent(getApplicationContext(), SelamatActivity.class);
+                startActivity(save);
+            }
+        });
     }
 }
