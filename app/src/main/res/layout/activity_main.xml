@@ -138,7 +138,7 @@
         android:id="@+id/daftarBtn"
         android:layout_width="104dp"
         android:layout_height="20dp"
-        android:layout_marginBottom="152dp"
+        android:layout_marginBottom="145dp"
         android:background="@drawable/daftar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
